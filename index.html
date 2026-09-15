@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Мой список желаний</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: #f8f9fa;
+            color: #212529;
+            margin: 0;
+            padding: 40px 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .container {
+            width: 100%;
+            max-width: 600px;
+            background: #ffffff;
+            padding: 30px;
+            border-radius: 16px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+        }
+        h1 {
+            font-size: 28px;
+            text-align: center;
+            margin-bottom: 10px;
+            color: #111;
+        }
+        .subtitle {
+            text-align: center;
+            color: #6c757d;
+            margin-bottom: 30px;
+        }
+        .wish-list {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+        .wish-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px;
+            background: #fdfdfd;
+            border: 1px solid #e9ecef;
+            border-radius: 12px;
+            gap: 15px;
+        }
+        .item-img {
+            width: 70px;
+            height: 70px;
+            object-fit: contain;
+            border-radius: 8px;
+            flex-shrink: 0;
+            background-color: #f8f9fa;
+        }
+        .item-info {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+            flex-grow: 1;
+            min-width: 0;
+        }
+        .item-title {
+            font-weight: 600;
+            font-size: 16px;
+        }
+        .item-desc {
+            font-size: 13px;
+            color: #6c757d;
+        }
+        .btn-link {
+            display: inline-block;
+            background-color: #0070f3;
+            color: white;
+            text-decoration: none;
+            padding: 10px 16px;
+            border-radius: 8px;
+            font-size: 14px;
+            font-weight: 500;
+            transition: background-color 0.2s;
+            white-space: nowrap;
+        }
+        .btn-link:hover {
+            background-color: #0051b3;
+        }
+
+        /* КРАСИВЫЙ И ШИРОКИЙ ВЫПАДАЮЩИЙ СПИСОК МАГАЗИНОВ */
+        .where-to-buy-dropdown {
+            position: relative;
+            display: inline-block;
+        }
+        .where-to-buy-dropdown summary {
+            display: inline-block;
+            background-color: #0070f3;
+            color: white;
+            padding: 10px 16px;
+            border-radius: 8px;
+            font-size: 14px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: background-color 0.2s;
+            white-space: nowrap;
+            user-select: none;
+            list-style: none;
+        }
+        .where-to-buy-dropdown summary::-webkit-details-marker {
+            display: none;
+        }
+        .where-to-buy-dropdown summary:hover {
+            background-color: #0051b3;
+        }
+        .where-to-buy-dropdown[open] summary {
+            background-color: #004499;
+        }
+        
+        /* Увеличенная ширина меню для красивого размещения значков */
+        .shop-menu {
+            position: absolute;
+            right: 0;
+            top: calc(100% + 5px);
+            background: white;
+            border: 1px solid #dee2e6;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+            padding: 8px;
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+            z-index: 10;
+            min-width: 200px; /* Увеличили, чтобы влез любой значок */
+        }
+        .shop-option {
+            display: flex;
+            align-items: center;
+            gap: 10px; /* Отступ для будущих значков */
+            padding: 10px 14px;
+            text-decoration: none;
+            color: #212529;
+            font-size: 14px;
+            font-weight: 500;
+            border-radius: 6px;
+            transition: background 0.1s;
+        }
+        .shop-option:hover {
+            background: #f1f3f5;
+        }
+        
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Подарки для Миши</h1>
+        <p class="subtitle">Список подарков</p>
+        
+        <div class="wish-list">
+            
+            <!-- БЛОК ПОДСТАВКИ -->
+            <div class="wish-item">
+                <img src="https://cdn.deepcool.com/public/ProductFile/DEEPCOOL/Cooling/LaptopCoolers/MULTI_CORE_X8/Gallery/365X365/01.jpg?auto=format,compress" alt="Подставка" class="item-img">
+                <div class="item-info">
+                    <div class="item-title">DEEPCOOL MultiCore X8</div>
+                    <div class="item-desc">Охлаждающая подставка под 17.3", алюминиевая панель, 4 мощных вентилятора</div>
+                </div>
+                
+                <details class="where-to-buy-dropdown">
+                    <summary>Где купить ▼</summary>
+                    <div class="shop-menu">
+    <a href="https://www.dns-shop.ru/product/bbd8db53168330b1/ohlazdausaa-podstavka-dla-noutbuka-deepcool-multicore-x8-cernyj/" target="_blank" class="shop-option" style="display: flex; justify-content: space-between; align-items: center; gap: 50px;">
+        <span>DNS</span>
+        <img src="data:image/png;base64,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" style="width: 16px; height: 16px; object-fit: contain;">
+    </a>
+    <a href="https://www.citilink.ru/product/podstavka-dlya-noutbuka-deepcool-multi-core-x8-17-381h268h29-mm-2husb-910814/properties/" target="_blank" class="shop-option" style="display: flex; justify-content: space-between; align-items: center; gap: 50px;">
+        <span>Ситилинк</span>
+        <img src="data:image/png;base64,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" style="width: 16px; height: 16px; object-fit: contain;">
+    </a>
+    <a href="https://market.yandex.ru/cc/B4hDay" target="_blank" class="shop-option" style="display: flex; justify-content: space-between; align-items: center; gap: 50px;">
+        <span>Яндекс Маркет</span>
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTVvYiSwiyh_DmXQ7R9LfFAOzUsq6Y4PJuRv-Wi-GXF3XwKxWd_323gyxU&s=10" style="width: 16px; height: 16px; object-fit: contain;">
+    </a>
+    <a href="https://ozon.ru/t/3QS3SSJ" target="_blank" class="shop-option" style="display: flex; justify-content: space-between; align-items: center; gap: 50px;">
+        <span>Ozon</span>
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQVJgBNfoZb5NPB0J6IN3Q3VOCQfyIJ-ut4GBIu4lk0r14oCCzus5IbcLE&s=10" style="width: 16px; height: 16px; object-fit: contain;">
+    </a>
+</div>
+
+                </details>
+            </div>
+
+            <!-- БЛОК ПОЧИНКИ КЛАВИАТУРЫ -->
+            <div class="wish-item">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQmEsGFZXCB3SYgG3FxpzHgovMIMMuZl3NFz8CIgCrOJQ&s=10" alt="Клавиатура" class="item-img">
+                <div class="item-info">
+                    <div class="item-title">Починка клавиатуры на ноутбуке</div>
+                    <div class="item-desc">Скинуть денег на починку клавиатуры</div>
+                </div>
+                <a href="https://tbank.ru" target="_blank" class="btn-link">Куда отправить</a>
+            </div>
+
+            <!-- БЛОК ПРОСТО ДЕНЕГ -->
+            <div class="wish-item">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQmEsGFZXCB3SYgG3FxpzHgovMIMMuZl3NFz8CIgCrOJQ&s=10" alt="Деньги" class="item-img">
+                <div class="item-info">
+                    <div class="item-title">Отправить деньги</div>
+                    <div class="item-desc"></div>
+                </div>
+                <a href="https://tbank.ru" target="_blank" class="btn-link">Куда отправить</a>
+            </div>
+
+        </div>
+    </div>
+
+</body>
+</html>
